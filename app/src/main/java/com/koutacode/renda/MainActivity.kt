@@ -63,7 +63,11 @@ class MainActivity : AppCompatActivity() {
         if (!isAccessibilityServiceEnabled()) {
             val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
             startActivity(intent)
-            Toast.makeText(this, "「超連打」をユーザー補助で有効にしてください", Toast.LENGTH_LONG).show()
+            
+            // Android 13+ の「制限された設定」に関する案内を追加
+            val msg = "「超連打」をユーザー補助で有効にしてください。\n" +
+                      "一覧にない場合は、アプリ情報画面の右上メニューから「制限された設定を許可」を押してください。"
+            Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
             return false
         }
         return true
