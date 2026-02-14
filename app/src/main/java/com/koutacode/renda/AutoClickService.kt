@@ -2,6 +2,9 @@ package com.koutacode.renda
 
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.GestureDescription
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.graphics.Path
@@ -17,6 +20,7 @@ import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.core.app.NotificationCompat
 import com.koutacode.renda.databinding.OverlayControlBinding
 
 class AutoClickService : AccessibilityService() {
@@ -29,6 +33,8 @@ class AutoClickService : AccessibilityService() {
     private var tapsPerSecond = 10
     private var lastX = 500f
     private var lastY = 1000f
+
+    private val CHANNEL_ID = "AutoClickServiceChannel"
 
     private val handler = Handler(Looper.getMainLooper())
     private val clickRunnable = object : Runnable {
@@ -43,7 +49,29 @@ class AutoClickService : AccessibilityService() {
     override fun onServiceConnected() {
         super.onServiceConnected()
         windowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        createNotificationChannel()
+        startForeground(1, createNotification())
         showOverlay()
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val serviceChannel = NotificationChannel(
+                CHANNEL_ID,
+                "Auto Click Service Channel",
+                NotificationManager.IMPORTANCE_LOW
+            )
+            val manager = getSystemService(NotificationManager::class.java)
+            manager.createNotificationChannel(serviceChannel)
+        }
+    }
+
+    private fun createNotification(): Notification {
+        return NotificationCompat.Builder(this, CHANNEL_ID)
+            .setContentTitle("超連打 実行中")
+            .setContentText("オートクリッカーがバックグラウンドで動作しています")
+            .setSmallIcon(android.R.drawable.ic_menu_mylocation)
+            .build()
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {}
