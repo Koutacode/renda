@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Renda</string>
-    <string name="title">Renda 連打テスター</string>
+    <string name="app_name">超連打</string>
+    <string name="title">超連打 - オートクリッカー</string>
     <string name="tap">タップ</string>
-    <string name="tap_area_hint">タップして連打位置を指定</string>
-    <string name="reset">リセット</string>
-    <string name="auto_tap">自動連打</string>
-    <string name="tps">速度</string>
+    <string name="tap_area_hint">連打を開始するには下の「サービス開始」ボタンを押してください</string>
+    <string name="reset">カウントリセット</string>
+    <string name="auto_tap">自動連打モード</string>
+    <string name="tps">連打速度（回/秒）</string>
     <string name="tps_value">%d 回/秒</string>
-    <string name="disclaimer">このアプリはアプリ内のタップエリアだけを自動連打します（練習/テスト用）。他アプリ（TikTok等）の操作は行いません。</string>
+    <string name="disclaimer">他のアプリの上で自動的にタップを行います。動作には「ユーザー補助」と「他のアプリの上に重ねて表示」の権限が必要です。</string>
+    <string name="accessibility_description">画面を自動的にタップするために使用します。このサービスが有効な間、設定された位置で連打を実行できます。</string>
+    <string name="start_service">サービス開始</string>
+    <string name="stop_service">サービス停止</string>
+    <string name="permission_required">権限が必要です</string>
+    <string name="permission_msg">自動連打機能を使用するには「ユーザー補助」と「他のアプリの上に重ねて表示」を有効にする必要があります。</string>
 </resources>
