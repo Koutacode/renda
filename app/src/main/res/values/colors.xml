@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="renda_primary">#0D3B66</color>
+    <color name="renda_primary_variant">#0B2F52</color>
+    <color name="renda_secondary">#F4D35E</color>
+    <color name="renda_secondary_variant">#EE964B</color>
+    <color name="renda_background">#F7F8FA</color>
+    <color name="renda_on_primary">#FFFFFF</color>
+    <color name="renda_on_secondary">#111111</color>
+</resources>
+
