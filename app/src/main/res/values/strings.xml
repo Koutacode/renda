@@ -3,10 +3,10 @@
     <string name="app_name">Renda</string>
     <string name="title">Renda 連打テスター</string>
     <string name="tap">タップ</string>
+    <string name="tap_area_hint">タップして連打位置を指定</string>
     <string name="reset">リセット</string>
     <string name="auto_tap">自動連打</string>
     <string name="tps">速度</string>
     <string name="tps_value">%d 回/秒</string>
-    <string name="disclaimer">このアプリはアプリ内のカウンタだけを自動連打します（練習/テスト用）。他アプリの操作は行いません。</string>
+    <string name="disclaimer">このアプリはアプリ内のタップエリアだけを自動連打します（練習/テスト用）。他アプリ（TikTok等）の操作は行いません。</string>
 </resources>
-

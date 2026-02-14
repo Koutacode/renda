@@ -25,13 +25,42 @@
         android:textSize="64sp"
         android:textStyle="bold" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/tapButton"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/tapAreaCard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="56dp"
-        android:text="@string/tap"
-        android:textSize="18sp" />
+        android:layout_height="220dp"
+        android:layout_marginBottom="12dp"
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:cardCornerRadius="16dp"
+        app:strokeColor="@color/renda_primary_variant"
+        app:strokeWidth="1dp">
+
+        <FrameLayout
+            android:id="@+id/tapArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tapAreaHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:alpha="0.85"
+                android:text="@string/tap_area_hint"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/targetDot"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/bg_target_dot"
+                android:visibility="gone" />
+
+        </FrameLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/resetButton"
@@ -101,4 +130,3 @@
         android:textSize="12sp" />
 
 </LinearLayout>
-
